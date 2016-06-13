@@ -13,6 +13,8 @@ set DTA_PATH_LOCAL_WELL_INFO_US_FL=%DTA_PATH_LOCAL_WELL_INFO_US%\florida
 set DTA_PATH_LOCAL_WELL_INFO_US_ID=%DTA_PATH_LOCAL_WELL_INFO_US%\idaho
 set DTA_PATH_LOCAL_WELL_INFO_US_KS=%DTA_PATH_LOCAL_WELL_INFO_US%\kansas
 set DTA_PATH_LOCAL_WELL_INFO_US_KY=%DTA_PATH_LOCAL_WELL_INFO_US%\kentucky
+set DTA_PATH_LOCAL_WELL_INFO_US_LA=%DTA_PATH_LOCAL_WELL_INFO_US%\louisiana
+set DTA_PATH_LOCAL_WELL_INFO_US_MI=%DTA_PATH_LOCAL_WELL_INFO_US%\michigan
 set DTA_PATH_LOCAL_WELL_INFO_US_ND=%DTA_PATH_LOCAL_WELL_INFO_US%\north_dakota
 set DTA_PATH_LOCAL_WELL_INFO_US_OK=%DTA_PATH_LOCAL_WELL_INFO_US%\oklahoma
 
@@ -27,6 +29,8 @@ set URL_WELLS_US_ID_ALL_WELLS=http://research.idwr.idaho.gov/gis/Spatial/Wells/W
 set URL_WELLS_US_ID_INJECTION_WELLS=http://research.idwr.idaho.gov/gis/Spatial/Wells/UndergroundInjectionControl/InjectionWells.zip
 set URL_WELLS_US_KS_ALL_WELLS=http://www.kgs.ku.edu/PRS/Ora_Archive/ks_wells.zip
 set URL_WELLS_US_KY_SHAPEFILE=http://www.uky.edu/KGS/emsweb/data/kyog_dd.zip
+set URL_WELLS_US_LA_SHAPEFILE=http://sonris-www.dnr.state.la.us/gis/agsweb/arcgisserver/arcgisoutput/extData/shp/wells.zip
+set URL_WELLS_US_MI_WELL_LOCS=ftp://GeoWebFace:Geology(1)@ftp.deq.state.mi.us/geowebface/DatabaseDownloads/ogs-oilandgas-well-locations.zip
 set URL_WELLS_US_ND_SHAPEFILE=https://www.dmr.nd.gov/output/ShapeFiles/Wells.zip
 set URL_WELLS_US_OK_W27BASE=ftp://ftp.occ.state.ok.us/OG_DATA/W27BASE.ZIP
 set URL_WELLS_US_OK_W97OPER=ftp://ftp.occ.state.ok.us/OG_DATA/W97OPER.ZIP
@@ -61,6 +65,12 @@ rem Fetch Kansas's wells
 
 rem Fetch Kentucky's wells
 %PGM_PATH_WGET% %URL_WELLS_US_KY_SHAPEFILE% -P "%DTA_PATH_LOCAL_WELL_INFO_US_KY%"
+
+rem Fetch Louisiana's wells
+%PGM_PATH_WGET% %URL_WELLS_US_LA_SHAPEFILE% -P "%DTA_PATH_LOCAL_WELL_INFO_US_LA%"
+
+rem Fetch Michigan's wells
+%PGM_PATH_WGET% %URL_WELLS_US_MI_WELL_LOCS% -P "%DTA_PATH_LOCAL_WELL_INFO_US_MI%"
 
 rem Fetch North Dakota's wells
 %PGM_PATH_WGET% %URL_WELLS_US_ND_SHAPEFILE% -P "%DTA_PATH_LOCAL_WELL_INFO_US_ND%"

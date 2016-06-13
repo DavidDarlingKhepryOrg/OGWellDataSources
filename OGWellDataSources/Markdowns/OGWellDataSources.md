@@ -108,7 +108,7 @@
 *   ***Michigan***
     *   [Michigan Department of Environmental Quality - Downloads and Available Data](http://www.michigan.gov/deq/0,4561,7-135-3311_4111_4231-188295--,00.html)
 	    *   [Well Locations](http://www.michigan.gov/deq/0,1607,7-135-3311_4111_4231-97870--,00.html)
-    	*   [ftp://ftp.deq.state.mi.us/geowebface/DownLoads/ogs-oilandgas-well-locations.zip](ftp://ftp.deq.state.mi.us/geowebface/DownLoads/ogs-oilandgas-well-locations.zip)
+    	*   [ftp://GeoWebFace:Geology(1)@ftp.deq.state.mi.us/geowebface/DatabaseDownloads/ogs-oilandgas-well-locations.zip](ftp://GeoWebFace:Geology(1)@ftp.deq.state.mi.us/geowebface/DatabaseDownloads/ogs-oilandgas-well-locations.zip)
 		    *   userid: GeoWebFace
 	    	*   passwd: Geology(1)
 
