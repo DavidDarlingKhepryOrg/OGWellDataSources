@@ -15,8 +15,14 @@ set DTA_PATH_LOCAL_WELL_INFO_US_KS=%DTA_PATH_LOCAL_WELL_INFO_US%\kansas
 set DTA_PATH_LOCAL_WELL_INFO_US_KY=%DTA_PATH_LOCAL_WELL_INFO_US%\kentucky
 set DTA_PATH_LOCAL_WELL_INFO_US_LA=%DTA_PATH_LOCAL_WELL_INFO_US%\louisiana
 set DTA_PATH_LOCAL_WELL_INFO_US_MI=%DTA_PATH_LOCAL_WELL_INFO_US%\michigan
+set DTA_PATH_LOCAL_WELL_INFO_US_MO=%DTA_PATH_LOCAL_WELL_INFO_US%\missouri
+set DTA_PATH_LOCAL_WELL_INFO_US_MT=%DTA_PATH_LOCAL_WELL_INFO_US%\montana
+set DTA_PATH_LOCAL_WELL_INFO_US_NY=%DTA_PATH_LOCAL_WELL_INFO_US%\new_york
 set DTA_PATH_LOCAL_WELL_INFO_US_ND=%DTA_PATH_LOCAL_WELL_INFO_US%\north_dakota
+set DTA_PATH_LOCAL_WELL_INFO_US_OH=%DTA_PATH_LOCAL_WELL_INFO_US%\ohio
 set DTA_PATH_LOCAL_WELL_INFO_US_OK=%DTA_PATH_LOCAL_WELL_INFO_US%\oklahoma
+set DTA_PATH_LOCAL_WELL_INFO_US_PA=%DTA_PATH_LOCAL_WELL_INFO_US%\pennsylvania
+set DTA_PATH_LOCAL_WELL_INFO_US_UT=%DTA_PATH_LOCAL_WELL_INFO_US%\utah
 
 set URL_WELLS_US_AK_DATA_EXTRACT=http://aogweb.state.ak.us/Data_Extract/AOGCC_DataExtract.zip
 set URL_WELLS_US_AL_SURFACE=http://www.ogb.state.al.us/ogb/ogb_gisdata/wells.zip
@@ -31,9 +37,32 @@ set URL_WELLS_US_KS_ALL_WELLS=http://www.kgs.ku.edu/PRS/Ora_Archive/ks_wells.zip
 set URL_WELLS_US_KY_SHAPEFILE=http://www.uky.edu/KGS/emsweb/data/kyog_dd.zip
 set URL_WELLS_US_LA_SHAPEFILE=http://sonris-www.dnr.state.la.us/gis/agsweb/arcgisserver/arcgisoutput/extData/shp/wells.zip
 set URL_WELLS_US_MI_WELL_LOCS=ftp://GeoWebFace:Geology(1)@ftp.deq.state.mi.us/geowebface/DatabaseDownloads/ogs-oilandgas-well-locations.zip
+set URL_WELLS_US_MO_OG_PERMITS=http://www.dnr.mo.gov/geology/geosrv/docs/permits-5-31-2013.xls
+set URL_WELLS_US_MT_SURFACE_WELLS=http://www.bogc.dnrc.mt.gov/WebApps/DataMiner/Wells/WellSurfaceLongLat.aspx
 set URL_WELLS_US_ND_SHAPEFILE=https://www.dmr.nd.gov/output/ShapeFiles/Wells.zip
+set URL_WELLS_US_NY_WELLS=ftp://ftp.dec.state.ny.us/dmn/zip/wellDOS.zip
+set URL_WELLS_US_OH_EOPY=ftp://ftp.dnr.state.oh.us/OilGas/Upload/RBDMS/Setup.exe
+set URL_WELLS_US_OH_CURR=ftp://ftp.dnr.state.oh.us/OilGas/Upload/RBDMS/Rbdmsd97.exe
 set URL_WELLS_US_OK_W27BASE=ftp://ftp.occ.state.ok.us/OG_DATA/W27BASE.ZIP
 set URL_WELLS_US_OK_W97OPER=ftp://ftp.occ.state.ok.us/OG_DATA/W97OPER.ZIP
+set URL_WELLS_US_PA_REPORTS=https://www.paoilandgasreporting.state.pa.us/publicreports/Modules/DataExports/DataExports.aspx
+set URL_WELLS_US_UT_WELLSDB=https://oilgas.ogm.utah.gov/pub/Database/welldata.exe
+
+rem Fetch Missouri's wells
+%PGM_PATH_WGET% %URL_WELLS_US_MO_OG_PERMITS% -P "%DTA_PATH_LOCAL_WELL_INFO_US_MO%"
+
+rem Fetch Montana's wells
+%PGM_PATH_WGET% %URL_WELLS_US_MT_SURFACE_WELLS% -P "%DTA_PATH_LOCAL_WELL_INFO_US_MT%"
+
+rem Fetch New York's wells
+%PGM_PATH_WGET% %URL_WELLS_US_NY_WELLS% -P "%DTA_PATH_LOCAL_WELL_INFO_US_NY%"
+
+rem Fetch Ohio's wells
+%PGM_PATH_WGET% %URL_WELLS_US_OH_EOPY% -P "%DTA_PATH_LOCAL_WELL_INFO_US_OH%"
+%PGM_PATH_WGET% %URL_WELLS_US_OH_CURR% -P "%DTA_PATH_LOCAL_WELL_INFO_US_OH%"
+
+rem Fetch Utah's wells
+%PGM_PATH_WGET% %URL_WELLS_US_UT_WELLSDB% -P "%DTA_PATH_LOCAL_WELL_INFO_US_UT%"
 
 GOTO end_of_processing
 
